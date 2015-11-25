@@ -1,0 +1,13 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+iface eth0 inet static
+            address 10.0.0.1
+            netmask 255.255.255.0
+            hisdf
+iface eth1 inet dhcp
+			
+            address 10.0.0.1
+iface eth2 inet dhcp
+
+            address 10.0.0.1
