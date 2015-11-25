@@ -1,0 +1,1 @@
+# Shell script setting ip and gateway
