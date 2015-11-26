@@ -87,11 +87,11 @@ setIpDebian(){
 # Ham cau hinh ip cho may redhat
 #
 setIpRedhat(){
-	[ -f "$NETWORK_CONFIG_REDHAT$1" ] || echo "" > $NETWORK_CONFIG_DEBIAN$1
-	[ -n "$2" ] && { grep -q "^BOOTPROTO=" $NETWORK_CONFIG_DEBIAN$1 && sed "s/^BOOTPROTO=.*/BOOTPROTO=$2/" -i $NETWORK_CONFIG_DEBIAN$1 || sed "$ a\BOOTPROTO=$2" -i $NETWORK_CONFIG_DEBIAN$1; }
-	[ -n "$3" ] && { grep -q "^IPADDR=" $NETWORK_CONFIG_DEBIAN$1 && sed "s/^IPADDR=.*/IPADDR=$3/" -i $NETWORK_CONFIG_DEBIAN$1 || sed "$ a\IPADDR=$3" -i $NETWORK_CONFIG_DEBIAN$1; }
-	[ -n "$4" ] && { grep -q "^NETMASK=" $NETWORK_CONFIG_DEBIAN$1 && sed "s/^NETMASK=.*/NETMASK=$4/" -i $NETWORK_CONFIG_DEBIAN$1 || sed "$ a\NETMASK=$4" -i $NETWORK_CONFIG_DEBIAN$1; }
-	[ -n "$5" ] && { grep -q "^GATEWAY=" $NETWORK_CONFIG_DEBIAN$1 && sed "s/^GATEWAY=.*/GATEWAY=$5/" -i $NETWORK_CONFIG_DEBIAN$1 || sed "$ a\GATEWAY=$5" -i $NETWORK_CONFIG_DEBIAN$1; }
+	[ -f "$NETWORK_CONFIG_REDHAT$1" ] || echo "" > $NETWORK_CONFIG_REDHAT$1
+	[ -n "$2" ] && { grep -q "^BOOTPROTO=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^BOOTPROTO=.*/BOOTPROTO=$2/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\BOOTPROTO=$2" -i $NETWORK_CONFIG_REDHAT$1; }
+	[ -n "$3" ] && { grep -q "^IPADDR=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^IPADDR=.*/IPADDR=$3/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\IPADDR=$3" -i $NETWORK_CONFIG_REDHAT$1; }
+	[ -n "$4" ] && { grep -q "^NETMASK=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^NETMASK=.*/NETMASK=$4/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\NETMASK=$4" -i $NETWORK_CONFIG_REDHAT$1; }
+	[ -n "$5" ] && { grep -q "^GATEWAY=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^GATEWAY=.*/GATEWAY=$5/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\GATEWAY=$5" -i $NETWORK_CONFIG_REDHAT$1; }
 	
 	grep -q "^FOOBAR=" file && sed "s/^FOOBAR=.*/FOOBAR=newvalue/" -i file || sed "$ a\FOOBAR=newvalue" -i file
 }
