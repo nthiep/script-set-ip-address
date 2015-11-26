@@ -7,7 +7,6 @@ cidr2mask() {
     if [ $i -lt $full_octets ]; then
       mask+=255
     elif [ $i -eq $full_octets ]; then
-      echo $1
       mask+=$((256 - 2**(8-$partial_octet)))
     else
       mask+=0
