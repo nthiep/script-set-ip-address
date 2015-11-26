@@ -106,7 +106,7 @@ main(){
 		# kiem tra interface
 		[ -n "$thisIface" ] && iface=$thisIface
 		# trang thai la static hay dhcp hay null
-		status=$thisStatus
+		[ -n "$thisStatus" ] && status=$thisStatus
 		# kiem tra dia chi ip
 		[ -n "$thisSetip" ] && isValidip $thisSetip && setip=$thisSetip || setip=$(getAutoIp $setip) 
 		# kiem tra subnetmask
@@ -120,7 +120,7 @@ main(){
 		# chay script cau hinh ip tren remote host
 		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $iface $status $setip $setnetmask $setgateway >> $RESULT_FILE
 		# doc file log va xoa
-		ssh $SYSADMIN_USERNAME@$host "cat $LOG_FILE ; rm $LOG_FILE" >> $LOG_FILE
+		ssh $SYSADMIN_USERNAME@$host "cat $LOG_FILE ; rm $LOG_FILE" < /dev/null >> $LOG_FILE 
 	done < "$1"
 }
 
