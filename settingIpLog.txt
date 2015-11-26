@@ -1,0 +1,301 @@
+********** Thu, 26 Nov 2015 21:37:08 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:38:49 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+
+
+********** Thu, 26 Nov 2015 21:44:02 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:44:02 +0700
+config value: 127.0.0.1 wlan0 not 255.0.255.0 10.0.0.5 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:192.168.0.126:255.255.255.0
+config getInfoIp: 192.168.0.126:255.255.255.0
+config result: 127.0.0.1:wlan0:192.168.0.126:255.255.255.0
+********** Thu, 26 Nov 2015 21:44:02 +0700
+config value: 127.0.0.1 eth1 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:44:03 +0700
+config value: 127.0.0.1 eth1 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1:
+********** Thu, 26 Nov 2015 21:44:03 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:44:03 +0700
+config value: 127.0.0.1 eth3 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config setIpDebian: Config file eth3 not found
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth3
+config getInfoIp: 
+config result: 127.0.0.1:eth3::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:44:03 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config setIpDebian: Config file eth4 not found
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:44:11 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+configuration.sh interfaces interfaces.bak README.md result.txt setting_file.txt settingIpLog.txt setting.sh ssh_shell.sh Thu, 26 Nov 2015 21:52:16 +0700 config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5 config isDebianOS: Debian OS s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/ config settingIp: config isDebianOS: Debian OS config getIpInfoDebian: IP:10.0.0.3 config getIpInfoDebian: netmask:255.0.255.0 config getInfoIp: 10.0.0.3:255.0.255.0 config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:52:27 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:52:28 +0700
+config value: 127.0.0.1 wlan0 not 255.0.255.0 10.0.0.5 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:192.168.0.126:255.255.255.0
+config getInfoIp: 192.168.0.126:255.255.255.0
+config result: 127.0.0.1:wlan0:192.168.0.126:255.255.255.0
+********** Thu, 26 Nov 2015 21:52:28 +0700
+config value: 127.0.0.1 eth1 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:52:28 +0700
+config value: 127.0.0.1 eth1 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1:
+********** Thu, 26 Nov 2015 21:52:28 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:52:29 +0700
+config value: 127.0.0.1 eth3 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth3
+config getInfoIp: 
+config result: 127.0.0.1:eth3::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:52:29 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Thu, 26 Nov 2015 21:53:35 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:55:18 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:55:59 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 21:57:17 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.0.255.0 
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.0.255.0\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.0.255.0
+config getInfoIp: 10.0.0.3:255.0.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.0.255.0:static:10.0.0.3:255.0.255.0:
+********** Thu, 26 Nov 2015 21:57:23 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3  
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth0
+config getInfoIp: 
+config result: 127.0.0.1:eth0::static:10.0.0.3::
+********** Thu, 26 Nov 2015 21:57:30 +0700
+config value: 127.0.0.1 eth0 static   
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth0
+config getInfoIp: 
+config result: 127.0.0.1:eth0::static:::
+********** Thu, 26 Nov 2015 22:20:05 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.5
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.5\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.5
+********** Thu, 26 Nov 2015 22:20:26 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:
+********** Thu, 26 Nov 2015 22:39:35 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Thu, 26 Nov 2015 22:40:03 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Thu, 26 Nov 2015 22:42:00 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Thu, 26 Nov 2015 22:46:54 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9

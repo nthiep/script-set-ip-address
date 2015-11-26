@@ -2,12 +2,15 @@
 auto lo
 iface lo inet loopback
 iface eth0 inet static
-            address 10.0.0.1
-            netmask 255.255.255.0
-            hisdf
+	address 10.0.0.3
+	netmask 255.255.255.0
+	gateway 10.0.0.9
+
 iface eth1 inet dhcp
-			
-            address 10.0.0.1
+
 iface eth2 inet dhcp
 
-            address 10.0.0.1
+iface eth3 inet dhcp
+
+iface eth4 inet dhcp
+
