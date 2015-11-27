@@ -7,10 +7,10 @@
 # Set Script Variables
 #
 # dia chi file cau hinh Debian hoac Ubuntu
-NETWORK_CONFIG_DEBIAN="/home/hiep/kichban/TieuLuanKB/interfaces"
+NETWORK_CONFIG_DEBIAN="/home/hiep/kichban/TieuLuanKB/ConfigFile/interfaces"
 # dia chi file cau hinh tren redhat fedora centos
 #NETWORK_CONFIG_REDHAT="/etc/sysconfig/network-scripts/ifcfg-"
-NETWORK_CONFIG_REDHAT="/home/hiep/kichban/TieuLuanKB/ifcfg-"
+NETWORK_CONFIG_REDHAT="/home/hiep/kichban/TieuLuanKB/ConfigFile/ifcfg-"
 # dia chi file luu lai cac buoc cau hinh
 LOG_FILE="settingIpLog.txt"
 ##################################################
@@ -20,7 +20,7 @@ getIfconfigInfo(){
 	[ $# -eq 0 ] && return 1
 	ip=$(ifconfig $1  2> /dev/null|grep "inet addr"|cut -f 2 -d ":"|cut -f 1 -d " ")
 	netmask=$(ifconfig $1  2> /dev/null|grep "Mask"|cut -f 4 -d ":")
-	[ -n "$ip" -a -n "$netmask" ] && echo "$ip:$netmask" || echo ""
+	[ -n "$ip" -a -n "$netmask" ] && echo "dhcp:$ip:$netmask" || echo ""
 }
 
 ##################################################
@@ -29,7 +29,7 @@ getIfconfigInfo(){
 #
 getIpInfoRedhat(){
 	echo "config getIpInfoRedhat: $1" >> $LOG_FILE	
-	[ -f "$NETWORK_CONFIG_REDHAT$1" ] || return 1
+	[ -f "$NETWORK_CONFIG_REDHAT$1" ] || { getIfconfigInfo $1; return 1; }
 	[ $# -eq 0 ] && return 1
 	ip=$(sed -n 's/IPADDR=//p'  $NETWORK_CONFIG_REDHAT$1|sed -e 's/^[[:space:]]*//')
 	netmask=$(sed -n 's/NETMASK=//p'  $NETWORK_CONFIG_REDHAT$1|sed -e 's/^[[:space:]]*//')
@@ -70,7 +70,7 @@ setIpDebian(){
 	
 	# cau lenh sed xoa tat ca cac dong cau hinh trong interface
 	#
-	sed -i.bak "/iface $1/,/iface/{//!d}" $NETWORK_CONFIG_DEBIAN
+	sed -i$(date +'_%m-%d-%Y_%k:%M:%S:%N_%Z%z').bak "/iface $1/,/iface/{//!d}" $NETWORK_CONFIG_DEBIAN
 	
 	# cau lenh sed cau hinh dhcp
 	#
@@ -87,7 +87,7 @@ setIpDebian(){
 # Ham cau hinh ip cho may redhat
 #
 setIpRedhat(){
-	[ -f "$NETWORK_CONFIG_REDHAT$1" ] || echo "" > $NETWORK_CONFIG_REDHAT$1
+	[ -f "$NETWORK_CONFIG_REDHAT$1" ] && cp $NETWORK_CONFIG_REDHAT$1 $NETWORK_CONFIG_REDHAT$1$(date +'_%m-%d-%Y_%k:%M:%S:%N_%Z%z').bak || echo "" > $NETWORK_CONFIG_REDHAT$1
 	[ -n "$2" ] && { grep -q "^BOOTPROTO=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^BOOTPROTO=.*/BOOTPROTO=$2/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\BOOTPROTO=$2" -i $NETWORK_CONFIG_REDHAT$1; }
 	[ -n "$3" ] && { grep -q "^IPADDR=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^IPADDR=.*/IPADDR=$3/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\IPADDR=$3" -i $NETWORK_CONFIG_REDHAT$1; }
 	[ -n "$4" ] && { grep -q "^NETMASK=" $NETWORK_CONFIG_REDHAT$1 && sed "s/^NETMASK=.*/NETMASK=$4/" -i $NETWORK_CONFIG_REDHAT$1 || sed "$ a\NETMASK=$4" -i $NETWORK_CONFIG_REDHAT$1; }
@@ -99,15 +99,21 @@ setIpRedhat(){
 #
 getIpInfoDebian(){
 	[ $# -eq 0 ] && return 1
+	# lay dhcp hay static	
+	type=$(sed -n "/iface $1/,/iface/ s/iface $1 inet//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
 	# lenh sed lay dia chi ip
 	ip=$(sed -n "/iface $1/,/iface/ s/address//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
 	# lenh sed lay subnetmask
 	netmask=$(sed -n "/iface $1/,/iface/ s/netmask//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
+	# lenh sed lay default gateway
+	gateway=$(sed -n "/iface $1/,/iface/ s/gateway//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
 	# ghi log file
+	echo "config getIpInfoDebian: Type:$type" >> $LOG_FILE
 	echo "config getIpInfoDebian: IP:$ip" >> $LOG_FILE
 	echo "config getIpInfoDebian: netmask:$netmask" >> $LOG_FILE
+	echo "config getIpInfoDebian: gateway:$gateway" >> $LOG_FILE
 	# kiem tra ip co ton tai trong file cau hinh
-	[ -n "$ip" -a -n "$netmask" ] && { echo "$ip:$netmask"; return 0; }
+	[ -n "$ip" -a -n "$netmask" ] && { echo "$type:$ip:$netmask:$gateway"; return 0; }
 	# lay dia chi ip tu lenh ifconfig
 	ipInfo=$(getIfconfigInfo $1)
 	# ghi log file
@@ -119,6 +125,7 @@ getIpInfoDebian(){
 # Ham kiem tra phien ban he dieu hanh co phai Debian hay Ubuntu
 #
 isDebianOS(){
+	return 1
 	local VERSION_FILE="/proc/version"
 	version=$(cat $VERSION_FILE)
 	[[ "$version" == *"ubuntu"* ]] || [[ "$version" == *"debian"* ]] \
@@ -150,9 +157,10 @@ getInfoIp(){
 # Ham main
 #
 main(){
-		[ "$3" == "static" -o "$3" == "dhcp" ] && settingIp $2 $3 $4 $5 $6 \
-		&& echo  $1:$2:$(getInfoIp $2):$3:$4:$5:$6\
-		|| echo  $1:$2:$(getInfoIp $2)
+	old=$(getInfoIp $2)	
+	[ "$3" == "static" -o "$3" == "dhcp" ] && settingIp $2 $3 $4 $5 $6 \
+	&& echo  $1:$2:$old:$3:$4:$5:$6\
+	|| echo  $1:$2:$old
 }
 echo "**********" $(date -R) >> $LOG_FILE
 echo "config value: $1 $2 $3 $4 $5 $6" >> $LOG_FILE

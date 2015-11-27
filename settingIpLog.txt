@@ -57,3 +57,1202 @@ config getIpInfoDebian: ipInfo:
 config getIpInfoRedhat: eth4
 config getInfoIp: 
 config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:47:19 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 19:47:19 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth1:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:47:20 +0700
+config value: 127.0.0.1 eth1 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth1:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 19:47:20 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:47:21 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:47:21 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:48:34 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 19:48:34 +0700
+config value: 127.0.0.1 eth1 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:48:35 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:48:35 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:48:36 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:48:36 +0700
+config value: 127.0.0.1 eth0 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0
+********** Fri, 27 Nov 2015 19:48:36 +0700
+config value: 127.0.0.1 eth1 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1:
+********** Fri, 27 Nov 2015 19:48:37 +0700
+config value: 127.0.0.1 eth2 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 19:48:37 +0700
+config value: 127.0.0.1 eth3 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 19:48:38 +0700
+config value: 127.0.0.1 eth4 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 19:49:05 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 19:49:05 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth1:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:06 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:06 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:07 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:07 +0700
+config value: 127.0.0.1 eth0 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0
+********** Fri, 27 Nov 2015 19:49:07 +0700
+config value: 127.0.0.1 eth1 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth1:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 19:49:08 +0700
+config value: 127.0.0.1 eth2 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 19:49:08 +0700
+config value: 127.0.0.1 eth3 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 19:49:09 +0700
+config value: 127.0.0.1 eth4 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 19:49:34 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 19:49:35 +0700
+config value: 127.0.0.1 eth1 static 255.255.255.0 10.0.0.9 
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 255.255.255.0\n\tnetmask 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:255.255.255.0
+config getIpInfoDebian: netmask:10.0.0.9
+config getInfoIp: 255.255.255.0:10.0.0.9
+config result: 127.0.0.1:eth1:255.255.255.0:10.0.0.9:static:255.255.255.0:10.0.0.9:
+********** Fri, 27 Nov 2015 19:49:35 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:36 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:36 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 19:49:37 +0700
+config value: 127.0.0.1 eth0 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0
+********** Fri, 27 Nov 2015 19:49:37 +0700
+config value: 127.0.0.1 eth1 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:255.255.255.0
+config getIpInfoDebian: netmask:10.0.0.9
+config getInfoIp: 255.255.255.0:10.0.0.9
+config result: 127.0.0.1:eth1:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 19:49:37 +0700
+config value: 127.0.0.1 eth2 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 19:49:38 +0700
+config value: 127.0.0.1 eth3 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 19:49:38 +0700
+config value: 127.0.0.1 eth4 not 255.255.0.0 10.0.0.1 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 20:15:19 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 20:15:20 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.4\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.4:255.255.255.0
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.0:static:10.0.0.4:255.255.255.0:10.0.0.9
+********** Fri, 27 Nov 2015 20:15:20 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:15:21 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:15:21 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:15:22 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.3:255.255.255.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.0
+********** Fri, 27 Nov 2015 20:15:22 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.0
+config getInfoIp: 10.0.0.4:255.255.255.0
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.0
+********** Fri, 27 Nov 2015 20:15:23 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 20:15:23 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:15:23 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 20:16:10 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.254.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.254.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.254.0
+config getInfoIp: 10.0.0.3:255.255.254.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.254.0:static:10.0.0.3:255.255.254.0:10.0.0.9
+********** Fri, 27 Nov 2015 20:16:10 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.254.0 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.4\n\tnetmask 255.255.254.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.254.0
+config getInfoIp: 10.0.0.4:255.255.254.0
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.254.0:static:10.0.0.4:255.255.254.0:10.0.0.9
+********** Fri, 27 Nov 2015 20:16:11 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:16:11 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:16:12 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:16:12 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.254.0
+config getInfoIp: 10.0.0.3:255.255.254.0
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.254.0
+********** Fri, 27 Nov 2015 20:16:13 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.254.0
+config getInfoIp: 10.0.0.4:255.255.254.0
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.254.0
+********** Fri, 27 Nov 2015 20:16:13 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 20:16:13 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:16:14 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 20:16:43 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.128\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:16:43 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.128 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.4\n\tnetmask 255.255.255.128\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:16:44 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:16:44 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:16:45 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:16:45 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 20:16:45 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128
+********** Fri, 27 Nov 2015 20:16:46 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 20:16:46 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:16:47 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 20:25:23 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.128\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:25:24 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.128 10.0.0.9
+config isDebianOS: Debian OS
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.4\n\tnetmask 255.255.255.128\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:25:24 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:25:25 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:25:25 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config settingIp: 
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:25:26 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 20:25:26 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128
+********** Fri, 27 Nov 2015 20:25:27 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 20:25:27 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:25:27 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 20:30:57 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+s/iface eth0.*/iface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.128\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:30:57 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.128 10.0.0.9
+s/iface eth1.*/iface eth1 inet static\n\taddress 10.0.0.4\n\tnetmask 255.255.255.128\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:30:58 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:30:58 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+s/iface eth3.*/iface eth3 inet static\n\taddress 10.0.0.10\n\tnetmask 255.255.0.0\n\tgateway 10.0.0.1\n/
+config settingIp: 
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:30:58 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:30:59 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoDebian: IP:10.0.0.3
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 20:30:59 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoDebian: IP:10.0.0.4
+config getIpInfoDebian: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128
+********** Fri, 27 Nov 2015 20:31:00 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config result: 127.0.0.1:eth2:
+********** Fri, 27 Nov 2015 20:31:00 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoDebian: IP:10.0.0.10
+config getIpInfoDebian: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:31:01 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: ipInfo:
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config result: 127.0.0.1:eth4:
+********** Fri, 27 Nov 2015 20:32:00 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:32:01 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth1
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:32:01 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:32:02 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:32:02 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:32:03 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 20:32:03 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth1
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128
+********** Fri, 27 Nov 2015 20:32:04 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:32:04 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:32:04 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:32:39 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:32:40 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth1
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:32:40 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:32:41 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:32:41 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:32:41 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 20:32:42 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth1
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128
+********** Fri, 27 Nov 2015 20:32:42 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:32:43 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:32:43 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:33:27 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:33:27 +0700
+config value: 127.0.0.1 eth1 static 10.0.0.4 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth1
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 20:33:28 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:33:28 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:33:29 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 20:33:29 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 20:33:29 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth1
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:eth1:10.0.0.4:255.255.255.128
+********** Fri, 27 Nov 2015 20:33:30 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:33:30 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 20:33:31 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:26:34 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 21:26:34 +0700
+config value: 127.0.0.1 wlan0 static 10.0.0.4 255.255.255.128 10.0.0.9
+config settingIp: 
+config getIpInfoRedhat: wlan0
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.4:255.255.255.128
+config result: 127.0.0.1:wlan0:10.0.0.4:255.255.255.128:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 21:26:34 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:26:35 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0:static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:26:35 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config settingIp: 
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0:dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:26:36 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 21:26:36 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1:
+********** Fri, 27 Nov 2015 21:26:37 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:26:37 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:26:38 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:30:17 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config getIpInfoRedhat: eth0
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth0::static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 21:30:17 +0700
+config value: 127.0.0.1 wlan0 static 10.0.0.4 255.255.255.128 10.0.0.9
+config getIpInfoRedhat: wlan0
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:wlan0::static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 21:30:18 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:30:18 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth3::static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:30:18 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:30:19 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 21:30:19 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1:
+********** Fri, 27 Nov 2015 21:30:20 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:30:20 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:30:21 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:36:19 +0700
+config value: 127.0.0.1 eth0 static 10.0.0.3 255.255.255.128 10.0.0.9
+config getIpInfoRedhat: eth0
+config getInfoIp: dhcp:10.0.0.2:255.255.255.0
+config settingIp: 
+config result: 127.0.0.1:eth0:dhcp:10.0.0.2:255.255.255.0:static:10.0.0.3:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 21:36:19 +0700
+config value: 127.0.0.1 wlan0 static 10.0.0.4 255.255.255.128 10.0.0.9
+config getIpInfoRedhat: wlan0
+config getInfoIp: dhcp:192.168.12.111:255.255.255.0
+config settingIp: 
+config result: 127.0.0.1:wlan0:dhcp:192.168.12.111:255.255.255.0:static:10.0.0.4:255.255.255.128:10.0.0.9
+********** Fri, 27 Nov 2015 21:36:19 +0700
+config value: 127.0.0.1 eth2 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth2::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:36:20 +0700
+config value: 127.0.0.1 eth3 static 10.0.0.10 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth3::static:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:36:20 +0700
+config value: 127.0.0.1 eth4 dhcp 10.0.0.10 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getInfoIp: 
+config settingIp: 
+config result: 127.0.0.1:eth4::dhcp:10.0.0.10:255.255.0.0:10.0.0.1
+********** Fri, 27 Nov 2015 21:36:21 +0700
+config value: 127.0.0.1 eth0 not 10.0.0.11 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth0
+config getIpInfoRedhat: ip:10.0.0.3
+config getIpInfoRedhat: netmask:255.255.255.128
+config getInfoIp: 10.0.0.3:255.255.255.128
+config result: 127.0.0.1:eth0:10.0.0.3:255.255.255.128
+********** Fri, 27 Nov 2015 21:36:21 +0700
+config value: 127.0.0.1 eth1 not 10.0.0.12 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth1
+config getInfoIp: 
+config result: 127.0.0.1:eth1:
+********** Fri, 27 Nov 2015 21:36:22 +0700
+config value: 127.0.0.1 eth2 not 10.0.0.13 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth2:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:36:22 +0700
+config value: 127.0.0.1 eth3 not 10.0.0.14 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth3
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth3:10.0.0.10:255.255.0.0
+********** Fri, 27 Nov 2015 21:36:23 +0700
+config value: 127.0.0.1 eth4 not 10.0.0.15 255.255.0.0 10.0.0.1
+config getIpInfoRedhat: eth4
+config getIpInfoRedhat: ip:10.0.0.10
+config getIpInfoRedhat: netmask:255.255.0.0
+config getInfoIp: 10.0.0.10:255.255.0.0
+config result: 127.0.0.1:eth4:10.0.0.10:255.255.0.0

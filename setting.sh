@@ -88,25 +88,28 @@ checkCidr(){
 #
 getAutoIp(){
 	local IFS=.
-	[ $# -eq 4 ] || return 1
 	set -- $*
-	echo $1.$2.$3.$(($4+1))
+	[ $# -eq 4 ] || return 1
+	[ $4 -lt 254 ] && { echo $1.$2.$3.$(($4+1)); return 0; }	
+	[ $3 -lt 254 ] && { echo $1.$2.$(($3+1)).1; return 0; }
+	[ $2 -lt 254 ] && { echo $1.$(($2+1)).0.1; return 0; }	
+	[ $1 -lt 254 ] && { echo $(($1+1)).0.0.1; return 0; } || return 1
 }
 
 ##################################################
 # Chuong trinh chinh 
 #
 main(){
-	while IFS=: read thisHost thisIface thisStatus thisSetip thisSetnetmask thisSetgateway
+	while IFS=: read thisHost thisIface thisType thisSetip thisSetnetmask thisSetgateway
 	do
 		echo "******** Setting ip for host $thisHost:$thisIface **********"
-		echo "read file " $thisHost $thisIface $thisStatus $thisSetip $thisSetnetmask $thisSetgateway
+		echo "read file " $thisHost $thisIface $thisType $thisSetip $thisSetnetmask $thisSetgateway
 		# kiem tra dia chi ip hoac hostname
 		[ -n "$thisHost" ] && host=$thisHost
 		# kiem tra interface
 		[ -n "$thisIface" ] && iface=$thisIface
 		# trang thai la static hay dhcp hay null
-		[ -n "$thisStatus" ] && status=$thisStatus
+		[ -n "$thisType" ] && type=$thisType
 		# kiem tra dia chi ip
 		[ -n "$thisSetip" ] && isValidip $thisSetip && setip=$thisSetip || setip=$(getAutoIp $setip) 
 		# kiem tra subnetmask
@@ -116,9 +119,9 @@ main(){
 		checkCidr $setnetmask && cidr2mask $setnetmask && setnetmask=$(cidr2mask $setnetmask) \
 		|| mask2cidr $setnetmask || setnetmask=$DEFAULT_NETMASK
 		###########
-		echo "setting file " $host $iface $status $setip $setnetmask $setgateway
+		echo "setting file " $host $iface $type $setip $setnetmask $setgateway
 		# chay script cau hinh ip tren remote host
-		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $iface $status $setip $setnetmask $setgateway >> $RESULT_FILE
+		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $iface $type $setip $setnetmask $setgateway >> $RESULT_FILE
 		# doc file log va xoa
 		ssh $SYSADMIN_USERNAME@$host "cat $LOG_FILE ; rm $LOG_FILE" < /dev/null >> $LOG_FILE 
 	done < "$1"

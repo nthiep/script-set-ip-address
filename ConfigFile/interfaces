@@ -3,13 +3,13 @@ auto lo
 iface lo inet loopback
 iface eth0 inet static
 	address 10.0.0.3
-	netmask 255.255.255.0
+	netmask 255.255.255.128
 	gateway 10.0.0.9
 
 iface eth1 inet static
-	address 10.0.0.10
-	netmask 255.255.0.0
-	gateway 10.0.0.1
+	address 10.0.0.4
+	netmask 255.255.255.128
+	gateway 10.0.0.9
 
 iface eth2 inet dhcp
 
