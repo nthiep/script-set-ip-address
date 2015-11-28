@@ -7,65 +7,85 @@
 # Set Script Variables
 #
 # dia chi file cau hinh Debian hoac Ubuntu
-#NETWORK_CONFIG_DEBIAN="/home/hiep/kichban/TieuLuanKB/ConfigFile/interfaces"
 NETWORK_CONFIG_DEBIAN="/etc/network/interfaces"
-# dia chi file luu lai cac buoc cau hinh
+# dia chi file log (luu lai cac buoc cau hinh)
 LOG_FILE="settingIpLog.txt"
 ##################################################
 # Ham lay dia chi ip tu lenh ifconfig neu hien tai dang su dung ip dong
 #
 getIfconfigInfo(){
+	# neu khong co ten card mang truyen vao return 1: ham thuc hien khong thanh cong
+	#										return 0: ham thuc hien thanh cong
 	[ $# -eq 0 ] && return 1
-	ip=$(ifconfig $1  2> /dev/null|grep "inet addr"|cut -f 2 -d ":"|cut -f 1 -d " ")
-	netmask=$(ifconfig $1  2> /dev/null|grep "Mask"|cut -f 4 -d ":")
+	# cat dia chi ip tu lenh ifconfig 
+	local ip=$(ifconfig $1  2> /dev/null|grep "inet addr"|cut -f 2 -d ":"|cut -f 1 -d " ")
+	# cat subnetmask tu lenh ifconfig
+	local netmask=$(ifconfig $1  2> /dev/null|grep "Mask"|cut -f 4 -d ":")
+	# echo ra dia chi ip va netmask neu tim thay
+	# echo "" neu khong tim thay
 	[ -n "$ip" -a -n "$netmask" ] && echo "dhcp:$ip:$netmask" || echo ""
 }
 # Ham lay dia chi default gateway
 #
 getDefaultGateway(){
-	[ -n "$(route |grep UG|sed -e 's/[[:space:]]\+/ /g'|cut -f2 -d' ')" ] || echo "-"
+	# lay dia chi default gateway tu lenh route
+	# neu dong nao co flag UG( Up and Gateway) thi bo bot khoang cach lay cot thu 2
+	route |grep UG|sed -e 's/[[:space:]]\+/ /g'|cut -f2 -d' '
 }
 
 # Ham dat default gateway
 #
 setDefaultGateway(){
+	# return 1 neu khong co gia tri ip truyen vao
 	[ $# -eq 0 ] && return 1
-	oldgateway=$(getDefaultGateway)
+	# lay dia chi default gateway hien tai su dung ham getDefaultGateway
+	local oldgateway=$(getDefaultGateway)
+	# kiem tra neu ton tai default gateway thi xoa cai hien tai
 	[ -n "$oldgateway" ] && route del default gw $oldgateway
-	route add default gw $1
+	# them vao default gateway, neu khong duoc thi tra ve ham thuc hien khong thanh cong
+	route add default gw $1 || return 1
 }
 
 ##################################################
 # Ham lay string cau hinh ip, netmask, gateway cho may debian
 #
 getConfigIpStringDebian(){
-	[ "$2" == "dhcp" ] && { printf '\\n'"iface $1 inet dhcp"'\\n'"auto $1"'\\n'; return 0; } || printf '\\n'"iface $1 inet static"'\\n'
+	# tao string de gan vao file /etc/network/interfaces
+	[ "$2" == "dhcp" ] && printf "iface $1 inet dhcp"'\\n' || printf "iface $1 inet static"'\\n'
 	[ -n "$3" ] && printf '\\t'"address $3"'\\n'
 	[ -n "$4" ] && printf '\\t'"netmask $4"'\\n'
-	[ -n "$5" ] && printf '\\t'"gateway $5"'\\n'
-	printf "auto $1"'\\n'
+	# neu chua co vi du: auto eth0 thi them vao
+ 	grep -q "auto $1" $NETWORK_CONFIG_DEBIAN|| printf "auto $1"'\\n'
 }
 
 ##################################################
 # Ham cau hinh ip cho may debian
 #
 setIpDebian(){
-	# Kiem tra neu file cau hinh chua tao hoac khong co interface cau hinh
-	#
+	# return 1 neu khong co gia tri ip truyen vao
+	[ $# -eq 0 ] && return 1
+	# Kiem tra neu file cau hinh khong co hoac khonng ton tai interface
+	# thi them vao
 	[ -f "$NETWORK_CONFIG_DEBIAN" ] && grep -q "iface $1" $NETWORK_CONFIG_DEBIAN || \
 	{ echo "iface $1" >> $NETWORK_CONFIG_DEBIAN; echo "config setIpDebian: Config file $1 not found" >> $LOG_FILE; }	
 	
-	# cau lenh sed xoa tat ca cac dong cau hinh trong interface
-	#
-	sed -i$(date +'_%m-%d-%Y_%k:%M:%S:%N_%Z%z').bak "/iface $1/,/iface/{//!d}" $NETWORK_CONFIG_DEBIAN
-	sed -i "/iface $1/,/\n/{//!d}" $NETWORK_CONFIG_DEBIAN
-	
-	# cau lenh sed cau hinh dhcp
+	# cau lenh sed xoa tat ca cac dong cau hinh trong interface hien tai
+	# vi du
+	# iface eth0 inet static
+	# 	address 1.1.1.1
+	#	255.255.255.0
+	# iface eth1 inet dhcp
+	# ==>> thanh
+	# iface eth0 inet static
+	# iface eth1 inet dhcp
+	sed -i.bak "/iface $1/,/iface/{//!d}" $NETWORK_CONFIG_DEBIAN
 	#
 	# ghi vao file log
 	echo "s/iface $1.*/$(getConfigIpStringDebian $1 $2 $3 $4 $5)/" >> $LOG_FILE 
-	# cau lenh sed cau hinh static
+	# cau lenh sed thay the interface cau hinh
 	sed -i "s/iface $1.*/$(getConfigIpStringDebian $1 $2 $3 $4 $5)/" $NETWORK_CONFIG_DEBIAN
+	# khoi dong lai interface (card mang)
+	ifdown $1 >> $LOG_FILE && ifup $1 >> $LOG_FILE
 	return 0
 
 }
@@ -75,37 +95,44 @@ setIpDebian(){
 #
 getIpInfoDebian(){
 	[ $# -eq 0 ] && return 1
-	# lay dhcp hay static	
-	type=$(sed -n "/iface $1/,/iface/ s/iface $1 inet//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
+	# lay ip dang thiet lap la dhcp hay static	
+	type=$(sed -n "/iface $1/,/iface/ s/iface $1 inet//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/[[:space:]]\+//')
 	# lenh sed lay dia chi ip
-	ip=$(sed -n "/iface $1/,/iface/ s/address//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
+	local ip=$(sed -n "/iface $1/,/iface/ s/address//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/[[:space:]]\+//')
 	# lenh sed lay subnetmask
-	netmask=$(sed -n "/iface $1/,/iface/ s/netmask//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
+	local netmask=$(sed -n "/iface $1/,/iface/ s/netmask//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/[[:space:]]\+//')
 	# ghi log file
-	echo "config getIpInfoDebian: Type:$type" >> $LOG_FILE
-	echo "config getIpInfoDebian: IP:$ip" >> $LOG_FILE
-	echo "config getIpInfoDebian: netmask:$netmask" >> $LOG_FILE
-	# kiem tra ip co ton tai trong file cau hinh
+	echo "config getIpInfoDebian: Type:$type IP:$ip netmask:$netmask" >> $LOG_FILE
+	# kiem tra ip co ton tai trong file cau hinh /etc/network/interfaces
 	[ -n "$ip" -a -n "$netmask" ] && { echo "$type:$ip:$netmask"; return 0; }
-	# lay dia chi ip tu lenh ifconfig
-	ipInfo=$(getIfconfigInfo $1)
+	# neu khong co ta lay dia chi ip tu lenh ifconfig
+	local ipInfo=$(getIfconfigInfo $1)
 	# ghi log file
 	echo "config getIpInfoDebian: ipInfo:$ipInfo" >> $LOG_FILE
-	[ -n "$ipInfo" ] && echo $ipInfo || echo "dhcp:-:-"
+	[ -n "$ipInfo" ] && echo $ipInfo || echo "-:-:-"
 }
 
 ##################################################
 # Ham main
 #
 main(){
-	old=$(getIpInfoDebian $3)	
+	# lay dia chi ip hien tai
+	local old=$(getIpInfoDebian $3)	
 	echo "config getInfoIp: $old" >> $LOG_FILE;
-	oldGateway=$(getDefaultGateway)
+	# lay dia chi defaut gateway hien tai
+	local oldGateway=$(getDefaultGateway)
+	# dia chi default gateway moi
+	local newGateway=$2
+	# echo - neu khong co gateway hien tai
 	[ -n "$oldgateway" ] || oldgateway="-"
-	[ "$2" == "-" ] || setDefaultGateway $2
+	# echo - neu khong dat duoc default gateway 
+	# dia chi default gateway can phai ket noi duoc (ping) moi dat thanh cong
+	[ "$2" == "-" ] || setDefaultGateway $2 || newGateway="-"
+	echo "config oldgateway:$oldgateway newGateway:$newGateway" >> $LOG_FILE;
+	# dat ip va hien thi thong tin ip hien tai
 	[ "$4" == "static" -o "$4" == "dhcp" ] && setIpDebian $3 $4 $5 $6\
-	&& echo  $1:$oldGateway:$2:$3:$old:$4:$5:$6\
-	|| echo  $1:$oldGateway:$2:$3:$old:-:-:-:-:-
+	&& echo  $1:$oldGateway:$newGateway:$3:$old:$4:$5:$6\
+	|| echo  $1:$oldGateway:$newGateway:$3:$old:-:-:-
 }
 echo "**********" $(date -R) >> $LOG_FILE
 echo "config value: $1 $2 $3 $4 $5 $6" >> $LOG_FILE
