@@ -61,7 +61,7 @@ getIpInfoRedhat(){
 # Ham lay string cau hinh static hay dhcp cho may debian
 #
 getConfigIfStringDebian(){
-	[ "$2" == "dhcp" ] && printf '\\n'"iface $1 inet dhcp"'\\n' || printf '\\n'"iface $1 inet static"'\\n'
+	[ "$2" == "dhcp" ] && printf '\\n'"auto $1"'\\n'"iface $1 inet dhcp"'\\n' || printf '\\n'"auto $1"'\\n'"iface $1 inet static"'\\n'
 	return 0
 }
 
@@ -152,7 +152,7 @@ isDebianOS(){
 #
 settingIp(){
 	result=$(isDebianOS && setIpDebian $1 $2 $3 $4 $5 || setIpRedhat $1 $2 $3 $4 $5)
-	ifdown eth0 && ifup eth0
+	ifdown $1 && ifup $1
 	echo "config settingIp: $result" >> $LOG_FILE; 
 }
 

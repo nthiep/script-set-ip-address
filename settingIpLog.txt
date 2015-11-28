@@ -17,3 +17,54 @@ config getIpInfoRedhat: ip:10.0.0.4
 config getIpInfoRedhat: netmask:255.255.255.0
 config getInfoIp: 10.0.0.4:255.255.255.0
 config result: 172.16.8.139::-:eth2:10.0.0.4:255.255.255.0:-:-:-:-:-
+********** Wed, 08 Jul 2015 22:47:12 -0700
+config value: 172.16.8.128 - eth0 static 10.0.0.3 255.255.255.0 10.0.0.9
+config isDebianOS: Debian OS
+config getIpInfoDebian: Type:dhcp
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: gateway:
+config getIpInfoDebian: ipInfo:dhcp:172.16.8.128:255.255.255.0
+config getInfoIp: dhcp:172.16.8.128:255.255.255.0
+config isDebianOS: Debian OS
+s/iface eth0.*/\niface eth0 inet static\n\taddress 10.0.0.3\n\tnetmask 255.255.255.0\n\tgateway 10.0.0.9\n/
+config settingIp: 
+config result: RTNETLINK answers: No such process
+172.16.8.128::-:eth0:dhcp:172.16.8.128:255.255.255.0:static:10.0.0.3:255.255.255.0:10.0.0.9
+********** Wed, 08 Jul 2015 23:46:55 -0700
+config value: 172.16.8.128 - eth1 static 192.168.0.100 255.255.255.0 192.168.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: Type:
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: gateway:
+config getIpInfoDebian: ipInfo:
+config getInfoIp: dhcp:-:-:-
+config isDebianOS: Debian OS
+config setIpDebian: Config file eth1 not found
+s/iface eth1.*/\niface eth1 inet static\n\taddress 192.168.0.100\n\tnetmask 255.255.255.0\n\tgateway 192.168.0.1\n/
+config settingIp: 
+config result: 172.16.8.128::-:eth1:dhcp:-:-:-:static:192.168.0.100:255.255.255.0:192.168.0.1
+********** Wed, 08 Jul 2015 23:52:38 -0700
+config value: 172.16.8.128 - eth1 static 192.168.0.100 255.255.255.0 192.168.0.1
+config isDebianOS: Debian OS
+config getIpInfoDebian: Type:static
+config getIpInfoDebian: IP:
+config getIpInfoDebian: netmask:
+config getIpInfoDebian: gateway:
+config getIpInfoDebian: ipInfo:dhcp:192.168.0.100:255.255.255.0
+config getInfoIp: dhcp:192.168.0.100:255.255.255.0
+config isDebianOS: Debian OS
+s/iface eth1.*/\nauto eth1\niface eth1 inet static\n\taddress 192.168.0.100\n\tnetmask 255.255.255.0\n\tgateway 192.168.0.1\n/
+config settingIp: 
+config result: 172.16.8.128::-:eth1:dhcp:192.168.0.100:255.255.255.0:static:192.168.0.100:255.255.255.0:192.168.0.1
+********** Sat, 28 Nov 2015 15:17:12 +0700
+config value: 172.16.8.139 - eth2 static 192.168.0.101 255.255.255.0 192.168.0.1
+config isDebianOS: Not Debian OS
+config getIpInfoRedhat: eth2
+config getIpInfoRedhat: ip:10.0.0.4
+config getIpInfoRedhat: netmask:255.255.255.0
+config getInfoIp: 10.0.0.4:255.255.255.0
+config isDebianOS: Not Debian OS
+config settingIp: 
+config result: 172.16.8.139::-:eth2:10.0.0.4:255.255.255.0:static:192.168.0.101:255.255.255.0:192.168.0.1
