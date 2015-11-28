@@ -52,8 +52,9 @@ setDefaultGateway(){
 getConfigIpStringDebian(){
 	# tao string de gan vao file /etc/network/interfaces
 	[ "$2" == "dhcp" ] && printf "iface $1 inet dhcp"'\\n' || printf "iface $1 inet static"'\\n'
-	[ -n "$3" ] && printf '\\t'"address $3"'\\n'
-	[ -n "$4" ] && printf '\\t'"netmask $4"'\\n'
+	# neu cau hinh static thi them dia chi ip vao
+	[ -n "$3" ] && [ "$2" == "static" ] && printf '\\t'"address $3"'\\n'
+	[ -n "$4" ] && [ "$2" == "static" ] && printf '\\t'"netmask $4"'\\n'
 	# neu chua co vi du: auto eth0 thi them vao
  	grep -q "auto $1" $NETWORK_CONFIG_DEBIAN|| printf "auto $1"'\\n'
 }
@@ -130,9 +131,9 @@ main(){
 	[ "$2" == "-" ] || setDefaultGateway $2 || newGateway="-"
 	echo "config oldgateway:$oldgateway newGateway:$newGateway" >> $LOG_FILE;
 	# dat ip va hien thi thong tin ip hien tai
-	[ "$4" == "static" -o "$4" == "dhcp" ] && setIpDebian $3 $4 $5 $6\
-	&& echo  $1:$oldGateway:$newGateway:$3:$old:$4:$5:$6\
-	|| echo  $1:$oldGateway:$newGateway:$3:$old:-:-:-
+	[ "$4" == "static" ] && { newIP=$5; newGW=$6; } || { newIP="-"; newGW="-"; }
+	[ "$4" == "static" -o "$4" == "dhcp" ] && setIpDebian $3 $4 $5 $6
+	echo  $1:$oldGateway:$newGateway:$3:$old:$4:$newIP:$newGateway
 }
 echo "**********" $(date -R) >> $LOG_FILE
 echo "config value: $1 $2 $3 $4 $5 $6" >> $LOG_FILE

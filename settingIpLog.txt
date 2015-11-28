@@ -76,3 +76,23 @@ config oldgateway:- newGateway:-
 s/iface eth1.*/iface eth1 inet static\n\taddress 192.168.1.1\n\tnetmask 255.255.0.0\n/
 Failed to bring up eth1.
 config result: 172.16.8.7::-:eth1:static:192.168.1.1:255.255.0.0:static:192.168.1.1:255.255.0.0
+********** Thu, 09 Jul 2015 05:05:44 -0700
+config value: 172.16.8.7 10.0.0.1 eth1 static 192.168.1.1 255.255.0.0
+config getIpInfoDebian: Type:static IP:192.168.1.1
+192.168.1.1 netmask:255.255.0.0
+255.255.0.0
+config getInfoIp: static:192.168.1.1
+192.168.1.1:255.255.0.0
+255.255.0.0
+config oldgateway:- newGateway:-
+s/iface eth1.*/iface eth1 inet static\n\taddress 192.168.1.1\n\tnetmask 255.255.0.0\nauto eth1\n/
+Failed to bring up eth1.
+config result: 172.16.8.7::-:eth1:static:192.168.1.1 192.168.1.1:255.255.0.0 255.255.0.0:static:192.168.1.1:255.255.0.0
+********** Thu, 09 Jul 2015 05:13:36 -0700
+config value: 172.16.8.7 10.0.0.1 eth1 static 192.168.1.1 255.255.0.0
+config getIpInfoDebian: Type:static IP: netmask:
+config getIpInfoDebian: ipInfo:dhcp:172.16.1.131:255.255.255.0
+config getInfoIp: dhcp:172.16.1.131:255.255.255.0
+config oldgateway:- newGateway:-
+s/iface eth1.*/iface eth1 inet static\n\taddress 192.168.1.1\n\tnetmask 255.255.0.0\nauto eth1\n/
+config result: 172.16.8.7::-:eth1:dhcp:172.16.1.131:255.255.255.0:static:192.168.1.1:-
