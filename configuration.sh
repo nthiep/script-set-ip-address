@@ -43,7 +43,7 @@ setDefaultGateway(){
 	# kiem tra neu ton tai default gateway thi xoa cai hien tai
 	[ -n "$oldgateway" ] && route del default gw $oldgateway
 	# them vao default gateway, neu khong duoc thi tra ve ham thuc hien khong thanh cong
-	route add default gw $1 || return 1
+	route add default gw $1|| return 1
 }
 
 ##################################################
@@ -86,7 +86,8 @@ setIpDebian(){
 	# cau lenh sed thay the interface cau hinh
 	sed -i "s/iface $1.*/$(getConfigIpStringDebian $1 $2 $3 $4 $5)/" $NETWORK_CONFIG_DEBIAN
 	# khoi dong lai interface (card mang)
-	ifdown $1 >> $LOG_FILE && ifup $1 >> $LOG_FILE
+	ifdown $1 >> $LOG_FILE
+	ifup $1 >> $LOG_FILE
 	return 0
 
 }
@@ -121,22 +122,22 @@ main(){
 	local old=$(getIpInfoDebian $3)	
 	echo "config getInfoIp: $old" >> $LOG_FILE;
 	# lay dia chi defaut gateway hien tai
-	local oldGateway=$(getDefaultGateway)
+	local oldGW=$(getDefaultGateway)
 	# dia chi default gateway moi
 	local newGateway=$2
 	# echo - neu khong co gateway hien tai
-	[ -n "$oldgateway" ] || oldgateway="-"
+	[ -n "$oldGW" ] || oldGW="-"
 	# echo - neu khong dat duoc default gateway 
 	# dia chi default gateway can phai ket noi duoc (ping) moi dat thanh cong
 	[ "$2" == "-" ] || setDefaultGateway $2 || newGateway="-"
-	echo "config oldgateway:$oldgateway newGateway:$newGateway" >> $LOG_FILE;
+	echo "config oldgateway:$oldGW newGateway:$newGateway" >> $LOG_FILE;
 	# dat ip va hien thi thong tin ip hien tai
-	[ "$4" == "static" ] && { newIP=$5; newGW=$6; } || { newIP="-"; newGW="-"; }
+	[ "$4" == "static" ] && { newIP=$5; newSubnet=$6; } || { newIP="-"; newSubnet="-"; }
 	[ "$4" == "static" -o "$4" == "dhcp" ] && setIpDebian $3 $4 $5 $6
-	echo  $1:$oldGateway:$newGateway:$3:$old:$4:$newIP:$newGateway
+	echo  $1:$oldGW:$newGateway:$3:$old:$4:$newIP:$newSubnet
 }
 echo "**********" $(date -R) >> $LOG_FILE
 echo "config value: $1 $2 $3 $4 $5 $6" >> $LOG_FILE
 result=$(main $1 $2 $3 $4 $5 $6)
-echo $result
+echo $(date +'%kh%Mm%Ss'):$result
 echo "config result: $result" >> $LOG_FILE
