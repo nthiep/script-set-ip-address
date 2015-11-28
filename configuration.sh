@@ -22,6 +22,20 @@ getIfconfigInfo(){
 	netmask=$(ifconfig $1  2> /dev/null|grep "Mask"|cut -f 4 -d ":")
 	[ -n "$ip" -a -n "$netmask" ] && echo "dhcp:$ip:$netmask" || echo ""
 }
+# Ham lay dia chi default gateway
+#
+getDefaultGateway(){
+	route |grep UG|sed -e "s/[[:space:]]\+/ /g"|cut -f2 -d" "
+}
+
+# Ham dat default gateway
+#
+setDefaultGateway(){
+	[ $# -eq 0 ] && return 1
+	oldgateway= $(getDefaultGateway)
+	[ -n "$oldgateway" ] && route del default gw $oldgateway
+	route add default gw $1
+}
 
 ##################################################
 # Ham lay dia chi ip tu lenh ifconfig neu hien tai dang su dung ip dong
@@ -147,7 +161,7 @@ settingIp(){
 #
 getInfoIp(){
 	# nau may la Debian hay Ubuntu thi goi ham getIpInfoDebian
-	# nguoc lai goi getIpInfoRedhat
+	# neu khong -> goi getIpInfoRedhat
 	isDebianOS && result=$(getIpInfoDebian $1) || result=$(getIpInfoRedhat $1)
 	echo $result
 	echo "config getInfoIp: $result" >> $LOG_FILE; 
@@ -157,13 +171,15 @@ getInfoIp(){
 # Ham main
 #
 main(){
-	old=$(getInfoIp $2)	
-	[ "$3" == "static" -o "$3" == "dhcp" ] && settingIp $2 $3 $4 $5 $6 \
-	&& echo  $1:$2:$old:$3:$4:$5:$6\
-	|| echo  $1:$2:$old
+	old=$(getInfoIp $3)
+	oldGateway=$(getDefaultGateway)
+	[ -n "$2" ] && setDefaultGateway $2
+	[ "$4" == "static" -o "$4" == "dhcp" ] && settingIp $3 $4 $5 $6 $7 \
+	&& echo  $1:$oldGateway:$2:$3:$old:$4:$5:$6:$7\
+	|| echo  $1:$oldGateway:$2:$3:$old
 }
 echo "**********" $(date -R) >> $LOG_FILE
-echo "config value: $1 $2 $3 $4 $5 $6" >> $LOG_FILE
-result=$(main $1 $2 $3 $4 $5 $6)
+echo "config value: $1 $2 $3 $4 $5 $6 $7" >> $LOG_FILE
+result=$(main $1 $2 $3 $4 $5 $6 $7)
 echo $result
 echo "config result: $result" >> $LOG_FILE

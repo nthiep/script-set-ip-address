@@ -6,11 +6,11 @@ usage
 -------
 setting file format
 <!-- highlight:-d language:console -->
-	ipaddress:interface:[type]:[setip]:[setnetmask]:[setgateway]
+	ipaddress:[DefaultGateway]:[interface:[type]:[setip]:[setnetmask]:[setgateway]]
 
-	DiaChiHost:Cardmang:[static/dhcp]:[diachiIP]:[Subnetmask]:[Gateway]
+	DiaChiHost:[DefaultGateway]:[Cardmang:[static/dhcp]:[diachiIP]:[Subnetmask]:[Gateway]]
 
 result file format
 <!-- highlight:-d language:console -->
-	ipaddress:interface:[oldtype]:[oldip]:[oldnetmask]:[oldgateway]:[newtype]:[newip]:[newnetmask]:[newgateway]
+	ipaddress:OldGateway:NewGateway:interface:oldtype:oldip:oldnetmask:oldgateway:newtype:newip:newnetmask:newgateway
 #### HOA - TUAN - HIEP ####

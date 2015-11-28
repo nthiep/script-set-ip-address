@@ -100,10 +100,12 @@ getAutoIp(){
 # Chuong trinh chinh 
 #
 main(){
-	while IFS=: read thisHost thisIface thisType thisSetip thisSetnetmask thisSetgateway
+	while IFS=: read thisHost thisDefaultGateway thisIface thisType thisSetip thisSetnetmask thisSetgateway
 	do
 		echo "******** Setting ip for host $thisHost:$thisIface **********"
-		echo "read file " $thisHost $thisIface $thisType $thisSetip $thisSetnetmask $thisSetgateway
+		echo "read file " $thisHost $thisDefaultGateway $thisIface $thisType $thisSetip $thisSetnetmask $thisSetgateway
+		# kiem tra default gateway
+		[ -n "$thisDefaultGateway" ] && isValidip && defaultGateway=$thisDefaultGateway
 		# kiem tra dia chi ip hoac hostname
 		[ -n "$thisHost" ] && host=$thisHost
 		# kiem tra interface
@@ -119,9 +121,9 @@ main(){
 		checkCidr $setnetmask && cidr2mask $setnetmask && setnetmask=$(cidr2mask $setnetmask) \
 		|| mask2cidr $setnetmask || setnetmask=$DEFAULT_NETMASK
 		###########
-		echo "setting file " $host $iface $type $setip $setnetmask $setgateway
+		echo "setting file " $host $defaultGateway $iface $type $setip $setnetmask $setgateway
 		# chay script cau hinh ip tren remote host
-		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $iface $type $setip $setnetmask $setgateway >> $RESULT_FILE
+		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $defaultGateway $iface $type $setip $setnetmask $setgateway >> $RESULT_FILE
 		# doc file log va xoa
 		ssh $SYSADMIN_USERNAME@$host "cat $LOG_FILE ; rm $LOG_FILE" < /dev/null >> $LOG_FILE 
 	done < "$1"
