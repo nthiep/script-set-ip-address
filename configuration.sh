@@ -139,7 +139,6 @@ getIpInfoDebian(){
 # Ham kiem tra phien ban he dieu hanh co phai Debian hay Ubuntu
 #
 isDebianOS(){
-	return 1
 	local VERSION_FILE="/proc/version"
 	version=$(cat $VERSION_FILE)
 	[[ "$version" == *"ubuntu"* ]] || [[ "$version" == *"debian"* ]] \
