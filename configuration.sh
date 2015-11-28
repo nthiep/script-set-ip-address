@@ -7,10 +7,11 @@
 # Set Script Variables
 #
 # dia chi file cau hinh Debian hoac Ubuntu
-NETWORK_CONFIG_DEBIAN="/home/hiep/kichban/TieuLuanKB/ConfigFile/interfaces"
+#NETWORK_CONFIG_DEBIAN="/home/hiep/kichban/TieuLuanKB/ConfigFile/interfaces"
+NETWORK_CONFIG_DEBIAN="/etc/network/interfaces"
 # dia chi file cau hinh tren redhat fedora centos
-#NETWORK_CONFIG_REDHAT="/etc/sysconfig/network-scripts/ifcfg-"
-NETWORK_CONFIG_REDHAT="/home/hiep/kichban/TieuLuanKB/ConfigFile/ifcfg-"
+NETWORK_CONFIG_REDHAT="/etc/sysconfig/network-scripts/ifcfg-"
+# NETWORK_CONFIG_REDHAT="/home/hiep/kichban/TieuLuanKB/ConfigFile/ifcfg-"
 # dia chi file luu lai cac buoc cau hinh
 LOG_FILE="settingIpLog.txt"
 ##################################################
@@ -25,14 +26,14 @@ getIfconfigInfo(){
 # Ham lay dia chi default gateway
 #
 getDefaultGateway(){
-	route |grep UG|sed -e "s/[[:space:]]\+/ /g"|cut -f2 -d" "
+	[ -n "$(route |grep UG|sed -e 's/[[:space:]]\+/ /g'|cut -f2 -d' ')" ] || echo "-"
 }
 
 # Ham dat default gateway
 #
 setDefaultGateway(){
 	[ $# -eq 0 ] && return 1
-	oldgateway= $(getDefaultGateway)
+	oldgateway=$(getDefaultGateway)
 	[ -n "$oldgateway" ] && route del default gw $oldgateway
 	route add default gw $1
 }
@@ -60,7 +61,7 @@ getIpInfoRedhat(){
 # Ham lay string cau hinh static hay dhcp cho may debian
 #
 getConfigIfStringDebian(){
-	[ "$2" == "dhcp" ] && printf "iface $1 inet dhcp"'\\n' || printf "iface $1 inet static"'\\n'
+	[ "$2" == "dhcp" ] && printf '\\n'"iface $1 inet dhcp"'\\n' || printf '\\n'"iface $1 inet static"'\\n'
 	return 0
 }
 
@@ -132,7 +133,7 @@ getIpInfoDebian(){
 	ipInfo=$(getIfconfigInfo $1)
 	# ghi log file
 	echo "config getIpInfoDebian: ipInfo:$ipInfo" >> $LOG_FILE
-	[ -n "$ipInfo" ] && echo $ipInfo || return 1
+	[ -n "$ipInfo" ] && echo $ipInfo || echo "dhcp:-:-:-"
 }
 
 ##################################################
@@ -172,10 +173,11 @@ getInfoIp(){
 main(){
 	old=$(getInfoIp $3)
 	oldGateway=$(getDefaultGateway)
-	[ -n "$2" ] && setDefaultGateway $2
+	[ -n "$oldgateway" ] || oldgateway="-"
+	[ "$2" == "-" ] || setDefaultGateway $2
 	[ "$4" == "static" -o "$4" == "dhcp" ] && settingIp $3 $4 $5 $6 $7 \
 	&& echo  $1:$oldGateway:$2:$3:$old:$4:$5:$6:$7\
-	|| echo  $1:$oldGateway:$2:$3:$old
+	|| echo  $1:$oldGateway:$2:$3:$old:-:-:-:-:-
 }
 echo "**********" $(date -R) >> $LOG_FILE
 echo "config value: $1 $2 $3 $4 $5 $6 $7" >> $LOG_FILE

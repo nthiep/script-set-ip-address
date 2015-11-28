@@ -22,6 +22,5 @@ iface eth3 inet static
 	netmask 255.255.0.0
 	gateway 10.0.0.1
 
-
 iface eth4 inet dhcp
 
