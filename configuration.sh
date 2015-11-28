@@ -81,20 +81,17 @@ getIpInfoDebian(){
 	ip=$(sed -n "/iface $1/,/iface/ s/address//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
 	# lenh sed lay subnetmask
 	netmask=$(sed -n "/iface $1/,/iface/ s/netmask//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
-	# lenh sed lay default gateway
-	gateway=$(sed -n "/iface $1/,/iface/ s/gateway//p"  $NETWORK_CONFIG_DEBIAN|sed -e 's/^[[:space:]]*//')
 	# ghi log file
 	echo "config getIpInfoDebian: Type:$type" >> $LOG_FILE
 	echo "config getIpInfoDebian: IP:$ip" >> $LOG_FILE
 	echo "config getIpInfoDebian: netmask:$netmask" >> $LOG_FILE
-	echo "config getIpInfoDebian: gateway:$gateway" >> $LOG_FILE
 	# kiem tra ip co ton tai trong file cau hinh
-	[ -n "$ip" -a -n "$netmask" ] && { echo "$type:$ip:$netmask:$gateway"; return 0; }
+	[ -n "$ip" -a -n "$netmask" ] && { echo "$type:$ip:$netmask"; return 0; }
 	# lay dia chi ip tu lenh ifconfig
 	ipInfo=$(getIfconfigInfo $1)
 	# ghi log file
 	echo "config getIpInfoDebian: ipInfo:$ipInfo" >> $LOG_FILE
-	[ -n "$ipInfo" ] && echo $ipInfo || echo "dhcp:-:-:-"
+	[ -n "$ipInfo" ] && echo $ipInfo || echo "dhcp:-:-"
 }
 
 ##################################################
@@ -106,12 +103,12 @@ main(){
 	oldGateway=$(getDefaultGateway)
 	[ -n "$oldgateway" ] || oldgateway="-"
 	[ "$2" == "-" ] || setDefaultGateway $2
-	[ "$4" == "static" -o "$4" == "dhcp" ] && setIpDebian $3 $4 $5 $6 $7 \
-	&& echo  $1:$oldGateway:$2:$3:$old:$4:$5:$6:$7\
+	[ "$4" == "static" -o "$4" == "dhcp" ] && setIpDebian $3 $4 $5 $6\
+	&& echo  $1:$oldGateway:$2:$3:$old:$4:$5:$6\
 	|| echo  $1:$oldGateway:$2:$3:$old:-:-:-:-:-
 }
 echo "**********" $(date -R) >> $LOG_FILE
-echo "config value: $1 $2 $3 $4 $5 $6 $7" >> $LOG_FILE
-result=$(main $1 $2 $3 $4 $5 $6 $7)
+echo "config value: $1 $2 $3 $4 $5 $6" >> $LOG_FILE
+result=$(main $1 $2 $3 $4 $5 $6)
 echo $result
 echo "config result: $result" >> $LOG_FILE

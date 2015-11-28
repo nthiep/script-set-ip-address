@@ -50,11 +50,11 @@ isValidip(){
 # Chuong trinh chinh 
 #
 main(){
-	while IFS=: read thisHost thisDefaultGateway thisIface thisType thisSetip thisSetnetmask thisSetgateway
+	while IFS=: read thisHost thisDefaultGateway thisIface thisType thisSetip thisSetnetmask
 	do
 		echo "******** Setting ip for host $thisHost:$thisIface **********"
 		echo "setgateway $thisDefaultGateway"
-		echo "read file " $thisHost $thisDefaultGateway $thisIface $thisType $thisSetip $thisSetnetmask $thisSetgateway
+		echo "read file " $thisHost $thisDefaultGateway $thisIface $thisType $thisSetip $thisSetnetmask
 		# kiem tra dia chi ip hoac hostname
 		[ -n "$thisHost" ] && host=$thisHost || continue
 		# kiem tra default gateway
@@ -67,12 +67,10 @@ main(){
 		[ -n "$thisSetip" ] && isValidip $thisSetip && setip=$thisSetip || setip=$(getAutoIp $setip) 
 		# kiem tra subnetmask
 		[ -n "$thisSetnetmask" ] && setnetmask=$thisSetnetmask
-		# kiem tra gateway
-		[ -n "$thisSetgateway" ] && isValidip $thisSetgateway && setgateway=$thisSetgateway
 		###########
 		echo "setting file " $host $defaultGateway $iface $type $setip $setnetmask $setgateway
 		# chay script cau hinh ip tren remote host
-		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $defaultGateway $iface $type $setip $setnetmask $setgateway >> $RESULT_FILE
+		ssh $SYSADMIN_USERNAME@$host 'bash -s' < $SCRIP_FILE $host $defaultGateway $iface $type $setip $setnetmask >> $RESULT_FILE
 		# doc file log va xoa
 		# < /dev/null hoac -n; dung chuyen huong stdin cua ssh vao /dev/null
 		ssh $SYSADMIN_USERNAME@$host "cat $LOG_FILE ; rm $LOG_FILE" < /dev/null >> $LOG_FILE 
